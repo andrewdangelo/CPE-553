@@ -28,7 +28,7 @@ int main() {
 
     // Check if the new book matches any of the existing books
     if (newBook.compare(book1) == 0 || newBook.compare(book2) == 0 || newBook.compare(book3) == 0) {
-        cout << "You already have a copy of this book." << endl;
+        cout << "You already have a copy of " << newBook<< endl;
     } else {
         if (newBook.compare(book1) < 0) {
             lastBook = book3;
