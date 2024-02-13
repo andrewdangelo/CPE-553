@@ -1,6 +1,6 @@
 /* Author: Andrew D'Angelo
 Date: 02/13/24
-Description: This program uses a Do-while loop to accept different grade values and returns the average of all the inputs..
+Description: This program uses a Do-while loop to accept different grade values and returns the average of all the inputs.
 */
 
 
