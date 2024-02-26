@@ -1,6 +1,6 @@
 /* Author: Andrew D'Angelo
    Date: 02/26/2024
-   Description: This program creates a 2 dimensional array of random numbers and determines the mode of the array.
+   Description: This porgram sorts through an array by comparing the chars iteratively and outputs the sorted array with the number of iterations it took to sort.
 */
 
 #include <iostream>
@@ -10,6 +10,17 @@ using namespace std;
 Declare and define a function named sortIt() that returns an integer and takes in a character
 array and a constant integer representing the array’s size as parameters and should
 */
+
+/**
+ * @brief Sorts a character array into lexicographic (alphabetical) order.
+ *        The function iterates through the array multiple times, each time moving elements that are out of order
+ *        towards their correct position. It continues until no swaps are needed, indicating the array is sorted.
+ *        Additionally, it prints the array after each full iteration to show the sorting progression.
+ * 
+ * @param arr Char array to be sorted.
+ * @param size The size of the character array.
+ * @return The number of iterations required to completely sort the array.
+ */
 int sortIt(char arr[], const int size) {
     //Have an integer variable to keep track of the number of iterations
     int iterations = 0;
@@ -17,7 +28,7 @@ int sortIt(char arr[], const int size) {
 
     // Loop until the array is sorted
     while (!sorted) {
-        sorted = true; // Assume the array is sorted
+        sorted = true;
         for (int i = 0; i < size - 1; i++) {
             // any time it detects two characters that are next to each other but are out of order
             if (arr[i] > arr[i + 1]) {
