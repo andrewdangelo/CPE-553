@@ -1,11 +1,16 @@
+/* Author: Andrew D'Angelo
+   Date: 02/26/2024
+   Description: This program creates a 2 dimensional array of random numbers and determines the mode of the array.
+*/
+
 #include <iostream>
-#include <cstdlib> // For rand() and srand()
-#include <ctime> // For time()
+#include <cstdlib> 
+#include <ctime>
 
 using namespace std;
 
 int main() {
-    srand(time(0)); // Seed for random number generation, ensuring different numbers each run
+    srand(time(0));
 
     int rows = 0;
     int cols = 0;
