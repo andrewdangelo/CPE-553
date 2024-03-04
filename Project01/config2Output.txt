@@ -1,0 +1,405 @@
+Please enter the name of the configuration file: config2.txt
+Day: 0
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+
+Day: 1
+S S S S S S S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+
+Day: 2
+S S S I I S S S S S S S S S S S S 
+S S I I I I S S S S S S S S S S S 
+S S I R R I S S S S S S S S S S S 
+S S I I I I S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S S I R R I S S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+
+Day: 3
+S S I I I I S S S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S S I I I I S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S S S S S S S S S S S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S S S S S S S S S S 
+
+Day: 4
+S I I R R I I S S S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S S I I I I S S S S S S S S S S S 
+S S S I I S S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S S S S S S S S I I S S S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S S S I I S S S S S S 
+
+Day: 5
+I I R R R R I I S S S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S S I I I I S S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V V V V S S S I I S S S S S S 
+S S S S S S S S I I I I S S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S I I R R R R R R I I S S 
+S S S S S I I R R R R R R I I S S 
+S S S S S I I R R R R R R I I S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S S S I I I I S S S S S 
+
+Day: 6
+I R R R R R R I I S S S S S S S S 
+R R R R R R R R I I S S S S S S S 
+R R R R R R R R I I S S S S S S S 
+R R R R R R R R I I S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+S I I R R I I S S S S S S S S S S 
+S S V V V V S S S S S S S S S S S 
+S S V S S V S S S S S S S S S S S 
+S S V S S V S S S I I S S S S S S 
+S S V V V V S S I I I I S S S S S 
+S S S S S S S I I R R I I S S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S I I R R R R R R I I S S 
+S S S S I I R R R R R R R R I I S 
+S S S S I I R R R R R R R R I I S 
+S S S S I I R R R R R R R R I I S 
+S S S S S I I R R R R R R I I S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S S S I I R R I I S S S S 
+
+Day: 7
+R R R R R R R R I I S S S S S S S 
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R I I S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I I R R R R I I S S S S S S S S S 
+S I V V V V I S S S S S S S S S S 
+S S V S S V S S S I I S S S S S S 
+S S V S S V S S I I I I S S S S S 
+S S V V V V S I I R R I I S S S S 
+S S S S S S I I R R R R I I S S S 
+S S S S S I I R R R R R R I I S S 
+S S S S I I R R R R R R R R I I S 
+S S S I I R R R R R R R R R R I I 
+S S S I I R R R R R R R R R R I I 
+S S S I I R R R R R R R R R R I I 
+S S S S I I R R R R R R R R I I S 
+S S S S S I I R R R R R R I I S S 
+S S S S S S I I R R R R I I S S S 
+
+Day: 8
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R I I S S S S S S S 
+I R R R R R R I I S S S S S S S S 
+I I V V V V I I I I I S S S S S S 
+S S V S S V S I I I I I S S S S S 
+S S V S S V S I I R R I I S S S S 
+S S V V V V I I R R R R I I S S S 
+S S S S S I I R R R R R R I I S S 
+S S S S I I R R R R R R R R I I S 
+S S S I I R R R R R R R R R R I I 
+S S I I R R R R R R R R R R R R I 
+S S I I R R R R R R R R R R R R I 
+S S I I R R R R R R R R R R R R I 
+S S S I I R R R R R R R R R R I I 
+S S S S I I R R R R R R R R I I S 
+S S S S S I I R R R R R R I I S S 
+
+Day: 9
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R I I S S S S S S 
+R R R R R R R R I I I S S S S S S 
+I R V V V V R I I I I I S S S S S 
+I I V S S V I I I R R I I S S S S 
+S S V S S V I I R R R R I I S S S 
+S S V V V V I R R R R R R I I S S 
+S S S S I I R R R R R R R R I I S 
+S S S I I R R R R R R R R R R I I 
+S S I I R R R R R R R R R R R R I 
+S I I R R R R R R R R R R R R R R 
+S I I R R R R R R R R R R R R R R 
+S I I R R R R R R R R R R R R R R 
+S S I I R R R R R R R R R R R R I 
+S S S I I R R R R R R R R R R I I 
+S S S S I I R R R R R R R R I I S 
+
+Day: 10
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R I I S S S S S 
+R R R R R R R R R I I I S S S S S 
+R R V V V V R R R R R I I S S S S 
+I I V S S V I R R R R R I I S S S 
+I I V S S V I R R R R R R I I S S 
+S S V V V V R R R R R R R R I I S 
+S S S I I R R R R R R R R R R I I 
+S S I I R R R R R R R R R R R R I 
+S I I R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+S I I R R R R R R R R R R R R R R 
+S S I I R R R R R R R R R R R R I 
+S S S I I R R R R R R R R R R I I 
+
+Day: 11
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R I I S S S S 
+R R R R R R R R R R R I I S S S S 
+R R V V V V R R R R R R I I S S S 
+R R V S S V R R R R R R R I I S S 
+I I V S S V R R R R R R R R I I S 
+I I V V V V R R R R R R R R R I I 
+S S I I R R R R R R R R R R R R I 
+S I I R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+S I I R R R R R R R R R R R R R R 
+S S I I R R R R R R R R R R R R I 
+
+Day: 12
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R I I S S S 
+R R R R R R R R R R R R I I S S S 
+R R V V V V R R R R R R R I I S S 
+R R V S S V R R R R R R R R I I S 
+R R V S S V R R R R R R R R R I I 
+I I V V V V R R R R R R R R R R I 
+I I I R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+S I I R R R R R R R R R R R R R R 
+
+Day: 13
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R I I S S 
+R R R R R R R R R R R R R I I S S 
+R R V V V V R R R R R R R R I I S 
+R R V S S V R R R R R R R R R I I 
+R R V S S V R R R R R R R R R R I 
+R R V V V V R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+I I R R R R R R R R R R R R R R R 
+
+Day: 14
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R I I S 
+R R R R R R R R R R R R R R I I S 
+R R V V V V R R R R R R R R R I I 
+R R V S S V R R R R R R R R R R I 
+R R V S S V R R R R R R R R R R R 
+R R V V V V R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+I R R R R R R R R R R R R R R R R 
+
+Day: 15
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R I I 
+R R R R R R R R R R R R R R R I I 
+R R V V V V R R R R R R R R R R I 
+R R V S S V R R R R R R R R R R R 
+R R V S S V R R R R R R R R R R R 
+R R V V V V R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+
+Day: 16
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R I 
+R R R R R R R R R R R R R R R R I 
+R R V V V V R R R R R R R R R R R 
+R R V S S V R R R R R R R R R R R 
+R R V S S V R R R R R R R R R R R 
+R R V V V V R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+
+Day: 17
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R V V V V R R R R R R R R R R R 
+R R V S S V R R R R R R R R R R R 
+R R V S S V R R R R R R R R R R R 
+R R V V V V R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+R R R R R R R R R R R R R R R R R 
+
+The outbreak took 17 days to end.
+The peak infectious count was 68 people at day 8.
+The average number of infectious people per day was 38.12 people.
+The final counts of susceptible, infectious, recovered people was: 
+Susceptible: 4
+Infectious:  0
+Recovered:   324
+Vaccinated:  12

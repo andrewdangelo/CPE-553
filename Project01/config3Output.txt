@@ -1,0 +1,99 @@
+Please enter the name of the configuration file: config3.txt
+Day: 0
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+S S S S S S S S S S 
+S S S S I I S S S S 
+S S S S I I S S S S 
+S S S S S S S S S S 
+
+Day: 1
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+S S S S I I S S S S 
+S S S I I I I S S S 
+S S S I I I I S S S 
+S S S S I I S S S S 
+
+Day: 2
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+S S S I I I I S S S 
+S S I I I I I I S S 
+S S I I I I I I S S 
+S S S I I I I S S S 
+
+Day: 3
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+S S I I I I I I S S 
+S I I I R R I I I S 
+S I I I R R I I I S 
+S S I I I I I I S S 
+
+Day: 4
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+S I I I R R I I I S 
+I I I R R R R I I I 
+I I I R R R R I I I 
+S I I I R R I I I S 
+
+Day: 5
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V S 
+I I I R R R R I I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I I R R R R I I I 
+
+Day: 6
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V I 
+I I R R R R R R I I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I I R R R R R R I I 
+
+Day: 7
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V I 
+I R R R R R R R R I 
+R R R R R R R R R R 
+R R R R R R R R R R 
+I R R R R R R R R I 
+
+Day: 8
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V I 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+
+Day: 9
+S S S S S S S S S S 
+S S S S S S S S S S 
+V V V V V V V V V R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+
+The outbreak took 9 days to end.
+The peak infectious count was 24 people at day 3.
+The average number of infectious people per day was 13.67 people.
+The final counts of susceptible, infectious, recovered people was: 
+Susceptible: 20
+Infectious:  0
+Recovered:   41
+Vaccinated:  9

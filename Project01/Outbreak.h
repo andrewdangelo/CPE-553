@@ -47,4 +47,22 @@ void outputState(const Person* const* region, int height, int width, int day);
  */
 void simulateOutbreak(Person**& region, int height, int width, int infectiousThreshold);
 
+/**
+ * @brief This is a custom data structure to hold the configuration file information
+ * 
+ * @param height represents the regions height
+ * @param width represents the regions width
+ * @param infectiousPeriod How many days the persion will be infectious
+ * @param infectiousThreshold How many infectious people need to be adjacent to a susceptible person for the susceptible person to become infectious on the next day.
+ * @param regionFileName The region file name.
+*/
+
+struct configData {
+    int height;
+    int width;
+    int infectiousPeriod;
+    int infectiousThreshold;
+    string regionFileName;
+};
+
 #endif

@@ -1,0 +1,95 @@
+Please enter the name of the configuration file: config
+config does not exist! Please enter the name of the configuration file: config1
+config1 does not exist! Please enter the name of the configuration file: config1.txt
+Day: 0
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S I I S S S S 
+S S S S I I S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+
+Day: 1
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S I I I I S S S 
+S S S I I I I S S S 
+S S S I I I I S S S 
+S S S I I I I S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+
+Day: 2
+S S S S S S S S S S 
+S S S S S S S S S S 
+S S I I I I I I S S 
+S S I I I I I I S S 
+S S I I R R I I S S 
+S S I I R R I I S S 
+S S I I I I I I S S 
+S S I I I I I I S S 
+S S S S S S S S S S 
+S S S S S S S S S S 
+
+Day: 3
+S S S S S S S S S S 
+S I I I I I I I I S 
+S I I I I I I I I S 
+S I I R R R R I I S 
+S I I R R R R I I S 
+S I I R R R R I I S 
+S I I R R R R I I S 
+S I I I I I I I I S 
+S I I I I I I I I S 
+S S S S S S S S S S 
+
+Day: 4
+I I I I I I I I I I 
+I I I I I I I I I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I R R R R R R I I 
+I I I I I I I I I I 
+I I I I I I I I I I 
+
+Day: 5
+I I I I I I I I I I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I R R R R R R R R I 
+I I I I I I I I I I 
+
+Day: 6
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+R R R R R R R R R R 
+
+The outbreak took 6 days to end.
+The peak infectious count was 64 people at day 4.
+The average number of infectious people per day was 33.33 people.
+The final counts of susceptible, infectious, recovered people was: 
+Susceptible: 0
+Infectious:  0
+Recovered:   100
+Vaccinated:  0
