@@ -1,8 +1,13 @@
 #ifndef OUTBREAK_H
 #define OUTBREAK_H
 
+
+#include <string>
+
+using namespace std;
+
 // Health states represented as an enum for setting up the required struct.
-enum HealthState { Susceptible, Infectious, Recovered, Vaccinated };
+enum HealthState { S, I, R, V };
 
 /**
  * @brief  person that contains at least the person’s health state and how long they
@@ -57,7 +62,7 @@ void simulateOutbreak(Person**& region, int height, int width, int infectiousThr
  * @param regionFileName The region file name.
 */
 
-struct configData {
+struct ConfigData {
     int height;
     int width;
     int infectiousPeriod;
