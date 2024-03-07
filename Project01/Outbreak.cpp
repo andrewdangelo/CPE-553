@@ -102,25 +102,66 @@ Person**  readData(int& height, int& width, int& infectiousThreshold) {
     return grid;
 }
 
+/**
+ * @brief helper function to convert the enum states to characters
+ * @param state the healthstate enum value
+ * @return state character
+*/
+char stateToChar(HealthState state) {
+    switch (state) {
+        case S: return 'S';
+        case I: return 'I';
+        case R: return 'R';
+        case V: return 'V';
+        default: return ' ';
+    }
+}
+
+/**
+ * @brief A function to output the entire state of the region and the day.
+ * @param region Two-dimensional array of person structs.
+ * @param height Integer height value.
+ * @param width Integer width value.
+ * @param day Represents the day.
+*/
+
+void outputRegionState(Person** region, int height, int width, int day) {
+    cout << "Region state on Day " << day << ":" << endl;
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            cout << stateToChar(region[i][j].state) << ' ';
+        }
+        cout << endl;
+    }
+}
+
+void simulate(Person** region, int height, int width, int infectiousThreshold){
+    int infectiousCounter = 0;
+
+    do{
+        //Check for infectious in the region and increase counter when found.
+        for (int i = 0; i<height; i++){
+            for (int j = 0; j< width; j++){
+                if (region[i][j].state == I){
+                    infectiousCounter++;
+                }
+            }
+        }
+
+        cout<<infectiousCounter<<endl;
+        break;
+    }
+    while (infectiousCounter > 0);
+}
+
 int main(){
     int height, width, infectiousThreshold;
     string regionFileName;
     Person** region = readData(height, width, infectiousThreshold);
 
-    // Output the initial state of the region as Day 0
-    cout << "Initial State of the Region (Day 0):" << endl;
-    for (int i = 0; i < height; ++i) {
-        for (int j = 0; j < width; ++j) {
-            cout << region[i][j].state << ' ';
-        }
-        cout << endl;
-    }
-
-    // Cleanup: Free dynamically allocated memory
-    for (int i = 0; i < height; ++i) {
-        delete[] region[i];
-    }
-    delete[] region;
+    // the initial state of the region should be output as Day 0
+    outputRegionState(region,height,width,0);
+    simulate(region,height,width,0);
 
     return 0;
 }
