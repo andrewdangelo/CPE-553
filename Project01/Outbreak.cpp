@@ -10,6 +10,12 @@
 
 using namespace std;
 
+
+/**
+ * @brief helper function to convert the characters to enum states
+ * @param state the healthstate enum value
+ * @return state character
+*/
 HealthState charToState(char c) {
     switch(c) {
         case 'S': return S;
@@ -17,6 +23,21 @@ HealthState charToState(char c) {
         case 'R': return R;
         case 'V': return V;
         default: return S; // Default case
+    }
+}
+
+/**
+ * @brief helper function to convert the enum states to characters
+ * @param state the healthstate enum value
+ * @return state character
+*/
+char stateToChar(HealthState state) {
+    switch (state) {
+        case S: return 'S';
+        case I: return 'I';
+        case R: return 'R';
+        case V: return 'V';
+        default: return ' ';
     }
 }
 
@@ -72,7 +93,7 @@ Person**  readData(int& height, int& width, int& infectiousThreshold) {
     //Set width and height
     width = config->width;
     height = config->height;
-
+    infectiousThreshold = config->infectiousThreshold;
     //Allocate the 2D array
     Person** grid = new Person*[height];
     
@@ -104,20 +125,6 @@ Person**  readData(int& height, int& width, int& infectiousThreshold) {
     return grid;
 }
 
-/**
- * @brief helper function to convert the enum states to characters
- * @param state the healthstate enum value
- * @return state character
-*/
-char stateToChar(HealthState state) {
-    switch (state) {
-        case S: return 'S';
-        case I: return 'I';
-        case R: return 'R';
-        case V: return 'V';
-        default: return ' ';
-    }
-}
 
 /**
  * @brief A function to output the entire state of the region and the day.
@@ -261,8 +268,8 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
     }
 
     while (hasInfectious){
-        
-        //vector<vector<Person>> changes(height, vector<Person>(width)); // To accumulate changes for the day
+        outputRegionState(region,height,width,day);
+
         vector<vector<int>> infectionChange;
         vector<vector<int>> recoverChange;
         int dailyInfectiousCount = 0;
@@ -274,10 +281,7 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
         int infectedAround = 0;
         for (int i = 0; i<height; i++){
             for (int j = 0; j< width; j++){
-                //copy to changes
-                //changes[i][j] = region[i][j];
-
-
+                
                  // Check for and apply recovery or infection based on the state at the day's start
                 if (region[i][j].state == I) {
                     //The infected person is still recovering
@@ -288,7 +292,7 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
                     }
                 } else if (region[i][j].state == S) {
                     int infectedAround = checkAround(region, i, j, height, width);
-                    //cout<<"Infected count: "<<infectedAround<<endl;
+                    cout<<infectedAround<<" ";
                     if (infectedAround >= infectiousThreshold) {
                         //There are alot of infected around so this person has become infected
                         infectionChange.push_back({i,j});
@@ -337,7 +341,6 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
         }
 
         //next day
-        outputRegionState(region,height,width,day);
 
         if (dailyInfectiousCount > peakInfectious) {
             peakInfectious = dailyInfectiousCount;
