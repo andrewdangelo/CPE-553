@@ -115,7 +115,8 @@ Person**  readData(int& height, int& width, int& infectiousThreshold) {
             int col = 0;
             for (size_t i = 0; i < line.length() && col < width; i += 2, ++col) { // Account for comma-separated values
                 grid[row][col].state = charToState(line[i]);
-                grid[row][col].infectionLen = (grid[row][col].state == I) ? config->infectiousPeriod : 0; // Initialize based on state
+               // grid[row][col].infectionLen = (grid[row][col].state == I) ? config->infectiousPeriod : 0; // Initialize based on state
+               grid[row][col].infectionLen = config->infectiousPeriod;
             }
             ++row;
         }
@@ -145,117 +146,11 @@ void outputRegionState(Person** region, int height, int width, int day) {
 }
 
 
-
-/* void simulate(Person** region, int height, int width, int infectiousThreshold){
-    vector<vector<int>> infectionTimer(height, vector<int>(width, 0));
-    bool hasInfectious = true;
-    int day = 0, totalInfectious = 0, peakInfectious = 0, peakDay = 0;
-    int susceptibleCount = 0, recoveredCount = 0, vaccinatedCount = 0;
-    //vector<vector<Person>> changes(height, vector<Person>(width));
-    
-    //intial region pass
-    //Check for infectious in the region and increase counter when found.
-    for (int i = 0; i<height; i++){
-        for (int j = 0; j< width; j++){
-            if (region[i][j].state == I){
-                hasInfectious = true;
-            }
-        }
-    }
-
-    while (hasInfectious){
-        
-        vector<vector<Person>> changes(height, vector<Person>(width)); // To accumulate changes for the day
-        vector<vector<int>> tempChange;
-        int dailyInfectiousCount = 0;
-        // Set flag
-        hasInfectious = false;
-        
-
-        //Run through for susceptibility analysis
-        int infectedAround = 0;
-        for (int i = 0; i<height; i++){
-            for (int j = 0; j< width; j++){
-                //copy to changes
-                changes[i][j] = region[i][j];
-
-
-                 // Check for and apply recovery or infection based on the state at the day's start
-                if (region[i][j].state == I) {
-                    //increment infection timer
-                    infectionTimer[i][j]++;
-                    if (infectionTimer[i][j] == region[i][j].infectionLen) {
-                        changes[i][j].state = R; // Infectious period is over, recover
-                    } else {
-                        hasInfectious = true; // Still infectious people around
-                    }
-                } else if (region[i][j].state == S) {
-                    int infectedAround = checkAround(region, i, j, height, width);
-                    //cout<<"Infected count: "<<infectedAround<<endl;
-                    if (infectedAround >= infectiousThreshold) {
-                        changes[i][j].state = I; // Become infectious next day
-                        infectionTimer[i][j] = 1; // Start infection timer
-                        hasInfectious = true;
-                    }
-                } 
-                if (region[i][j].state == I && infectionTimer[i][j] < region[i][j].infectionLen) {
-                    dailyInfectiousCount++;
-                    hasInfectious = true;
-                    infectionTimer[i][j]++;
-                } else if (region[i][j].state == I && infectionTimer[i][j] >= region[i][j].infectionLen) {
-                    changes[i][j].state = R; // Recover
-                } else if (region[i][j].state == S) {
-                    susceptibleCount++;
-                } else if (region[i][j].state == R) {
-                    recoveredCount++;
-                } else if (region[i][j].state == V) {
-                    vaccinatedCount++;
-                }
-
-                if (region[i][j].state == S && checkAround(region, i, j, height, width) >= infectiousThreshold) {
-                    changes[i][j].state = I;
-                    infectionTimer[i][j] = 1; // Start infection timer
-                    hasInfectious = true;
-                }
-            }
-        }
-
-       // Apply the accumulated changes for the day
-        for (int i = 0; i < height; ++i) {
-            for (int j = 0; j < width; ++j) {
-                region[i][j] = changes[i][j];
-            }
-        }
-
-        //next day
-        outputRegionState(region,height,width,day);
-
-        if (dailyInfectiousCount > peakInfectious) {
-            peakInfectious = dailyInfectiousCount;
-            peakDay = day;
-        }
-        totalInfectious += dailyInfectiousCount;
-
-        day++;
-    }
-
-    cout << "The outbreak took " << day << " days to end." << endl;
-    cout << "The peak infectious count was " << peakInfectious << " people at day " << peakDay << "." << endl;
-    double averageInfectious = static_cast<double>(totalInfectious) / day;
-    cout << "The average number of infectious people per day was " << fixed << setprecision(2) << averageInfectious << " people." << endl;
-    cout << "The final counts of susceptible, infectious, recovered, and vaccinated people was: " << endl;
-    cout << "Susceptible: " << susceptibleCount << endl;
-    cout << "Infectious:  " << "0" << endl;
-    cout << "Recovered:   " << recoveredCount << endl;
-    cout << "Vaccinated:  " << vaccinatedCount << endl;
-}  */
-
 void simulate(Person** region, int height, int width, int infectiousThreshold){
     vector<vector<int>> infectionTimer(height, vector<int>(width, 0));
     bool hasInfectious = true;
     int day = 0, totalInfectious = 0, peakInfectious = 0, peakDay = 0;
     int susceptibleCount = 0, recoveredCount = 0, vaccinatedCount = 0;
-    //vector<vector<Person>> changes(height, vector<Person>(width));
     
     //intial region pass
     //Check for infectious in the region and increase counter when found.
@@ -268,13 +163,18 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
     }
 
     while (hasInfectious){
-        outputRegionState(region,height,width,day);
-
-        vector<vector<int>> infectionChange;
-        vector<vector<int>> recoverChange;
+        vector<vector<int>> infectionChange; // Keeps track of susceptible people who have become infected
+        vector<vector<int>> recoverChange; // Keeps track of infected people who have become recovered
+        vector<vector<int>> infectionPeriodChange; // Keeps track of which infection periods need to be decreased
         int dailyInfectiousCount = 0;
+        int countS = 0; // Count susceptible each round
+        int countR = 0; // Count recovered each round
+        int countV = 0; // Count vaccinated each round
         // Set flag
         hasInfectious = false;
+
+        outputRegionState(region,height,width,day);
+
         
 
         //Run through for susceptibility analysis
@@ -284,43 +184,49 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
                 
                  // Check for and apply recovery or infection based on the state at the day's start
                 if (region[i][j].state == I) {
-                    //The infected person is still recovering
-                    if (region[i][j].infectionLen > 0) {
+                    
+                    //check for howmany infected
+                    dailyInfectiousCount++;
+                    hasInfectious = true;
+
+                    if (region[i][j].infectionLen <= 0) {
                         recoverChange.push_back({i,j}); // Infectious period is over, recover
                     } else {
-                        hasInfectious = true; // Still infectious people around
+                        hasInfectious = true;
+                        infectionPeriodChange.push_back({i,j}); //The infected person is still recovering
                     }
                 } else if (region[i][j].state == S) {
                     int infectedAround = checkAround(region, i, j, height, width);
-                    cout<<infectedAround<<" ";
                     if (infectedAround >= infectiousThreshold) {
                         //There are alot of infected around so this person has become infected
                         infectionChange.push_back({i,j});
                         hasInfectious = true;
                     }
+                } else if (region[i][j].state == R){
+                    countR++;
                 } 
-                if (region[i][j].state == I && infectionTimer[i][j] < region[i][j].infectionLen) {
-                    dailyInfectiousCount++;
-                    hasInfectious = true;
-                } else if (region[i][j].state == I && infectionTimer[i][j] >= region[i][j].infectionLen) {
-                    recoverChange.push_back({i,j}); // Recover
-                } else if (region[i][j].state == S) {
-                    susceptibleCount++;
-                } else if (region[i][j].state == R) {
-                    recoveredCount++;
-                } else if (region[i][j].state == V) {
-                    vaccinatedCount++;
-                }
+                else if (region[i][j].state == V){
+                    countV++;
+                } 
+                
             }
         }
 
        // Apply the accumulated changes for the day
-        for (int i = 0; i < height; ++i) {
-            for (int j = 0; j < width; ++j) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
               if(!infectionChange.empty()){  
                     for (const auto& coord : infectionChange) {
                         if (coord[0] == i && coord[1] == j) {
                             region[i][j].state = I;
+                            region[i][j].infectionLen--;
+                            break; // Coordinate found, no need to continue the inner loop
+                        }
+                    }
+                }
+                if(!infectionPeriodChange.empty()){  
+                    for (const auto& coord : infectionPeriodChange) {
+                        if (coord[0] == i && coord[1] == j) {
                             region[i][j].infectionLen--;
                             break; // Coordinate found, no need to continue the inner loop
                         }
@@ -347,6 +253,11 @@ void simulate(Person** region, int height, int width, int infectiousThreshold){
             peakDay = day;
         }
         totalInfectious += dailyInfectiousCount;
+        vaccinatedCount = countV;
+        susceptibleCount = countS;
+        recoveredCount = countR;
+
+        
 
         day++;
     }
@@ -392,98 +303,3 @@ int checkAround(Person** region, int x, int y, int height, int width){
 
     return counter;
 }
-
-/* void simulate(Person** region, int height, int width, int infectiousThreshold){
-    bool hasInfectious = true;
-    int day = 0;
-    int peakInfectiousCount = 0, peakDay = 0;
-    int totalInfectiousCount = 0, daysCounted = 0;
-
-
-   // outputRegionState(regionCopy, height, width, day);
-
-    while(hasInfectious){
-        Person** regionCopy = copyRegion(region, height, width);
-
-        int dailyInfectiousCount = 0;
-
-        //iterate through the region
-        for (size_t i = 0; i < height; i++)
-        {
-            for (size_t j = 0; j < width; j++)
-            {
-                if(region[i][j].state == S){ //Person is S
-                    //Need to check if there are infected all around
-                    int infectiousCount = 0;
-                    // Check all 8 directions around the current person
-                    for(int dx = -1; dx <= 1; dx++) {
-                        for(int dy = -1; dy <= 1; dy++) {
-                            int ni = i + dx, nj = j + dy;
-                            // Check bounds and if the neighbor is infectious
-                            if(ni >= 0 && ni < height && nj >= 0 && nj < width && !(dx == 0 && dy == 0) && region[ni][nj].state == 'I') {
-                                infectiousCount++;
-                            }
-                        }
-                    }
-
-                    if(infectiousCount >= infectiousThreshold) {
-                        // Code to mark the current person as infectious or take some action
-                        regionCopy[i][j].state = I;
-                        hasInfectious = true;
-                    }
-                }
-                else if(region[i][j].state == I){ //Person is I
-                    regionCopy[i][j].infectionLen++;
-                    if(regionCopy[i][j].infectionLen >= region[i][j].infectionLen) {
-                        regionCopy[i][j].state = R; // Mark for recovery
-                    } else {
-                        hasInfectious = true;
-                        dailyInfectiousCount++;
-                    }
-                }
-
-            }
-            
-        }
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                region[i][j] = regionCopy[i][j];
-            }
-        }
-      
-        outputRegionState(regionCopy, height, width, day);
-        day++;
-        totalInfectiousCount += dailyInfectiousCount;
-        if(dailyInfectiousCount > peakInfectiousCount) {
-            peakInfectiousCount = dailyInfectiousCount;
-            peakDay = day;
-        }
-    }
-    
-}
-
-Person** copyRegion(Person** originalRegion, int height, int width) {
-    // Allocate memory for the new 2D array
-    Person** newRegion = new Person*[height];
-    for(int i = 0; i < height; ++i) {
-        newRegion[i] = new Person[width];
-        for(int j = 0; j < width; ++j) {
-            // Assuming Person can be copied this way; adjust as necessary
-            newRegion[i][j] = originalRegion[i][j];
-        }
-    }
-    return newRegion;
-} */
-
-/* int main(){
-    int height, width, infectiousThreshold;
-    string regionFileName;
-    Person** region = readData(height, width, infectiousThreshold);
-
-    // the initial state of the region should be output as Day 0
-    
-    simulate(region,height,width,infectiousThreshold);
-
-    return 0;
-} */

@@ -33,12 +33,12 @@ struct Person {
 Person** readData(int& height, int& width, int& infectiousThreshold);
 
 /**
- * @brief Outputs the current state of the simulation to a file or console.
+ * @brief Outputs the current state of the region console.
  * 
- * @param region Constant pointer to a 2D array of Person objects.
+ * @param region Constant pointer to a 2D array of Person objects that define the region.
  * @param height The height of the region.
  * @param width The width of the region.
- * @param day The current simulation day.
+ * @param day The current day.
  */
 void outputRegionState(const Person* const* region, int height, int width, int day);
 
@@ -70,8 +70,18 @@ struct ConfigData {
     string regionFileName;
 };
 
+/**
+ * @brief This function checks all around a susceptible person for infection.
+ * 
+ * @param region Pointer to a 2D array of Person objects to update based on simulation rules.
+ * @param x Coordinate of i.
+ * @param Coordinate of j.
+ * @param height The height of the region.
+ * @param width The width of the region.
+ * 
+ * @return Returns the number of infected people around a particular susceptible person.
+*/
 int checkAround(Person** region, int x, int y, int height, int width);
 
-Person** copyRegion(Person** originalRegion, int height, int width);
 
 #endif
