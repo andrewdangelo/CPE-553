@@ -30,7 +30,7 @@ struct Person {
  * @param infectiousThreshold Reference to store the threshold of days a person remains infectious.
  * @param region Pointer to a 2D array of Person objects representing the population.
  */
-void readData(int& height, int& width, int& infectiousThreshold, Person***& region);
+Person** readData(int& height, int& width, int& infectiousThreshold);
 
 /**
  * @brief Outputs the current state of the simulation to a file or console.
@@ -40,7 +40,7 @@ void readData(int& height, int& width, int& infectiousThreshold, Person***& regi
  * @param width The width of the region.
  * @param day The current simulation day.
  */
-void outputState(const Person* const* region, int height, int width, int day);
+void outputRegionState(const Person* const* region, int height, int width, int day);
 
 /**
  * @brief Simulates the outbreak for a single time step.
@@ -50,7 +50,7 @@ void outputState(const Person* const* region, int height, int width, int day);
  * @param width The width of the region.
  * @param infectiousThreshold The threshold of days a person remains infectious.
  */
-void simulateOutbreak(Person**& region, int height, int width, int infectiousThreshold);
+void simulate(Person** region, int height, int width, int infectiousThreshold);
 
 /**
  * @brief This is a custom data structure to hold the configuration file information
@@ -69,5 +69,9 @@ struct ConfigData {
     int infectiousThreshold;
     string regionFileName;
 };
+
+int checkAround(Person** region, int x, int y, int height, int width);
+
+Person** copyRegion(Person** originalRegion, int height, int width);
 
 #endif
