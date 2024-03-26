@@ -9,14 +9,29 @@
 
 using namespace std;
 
+/**
+ * @brief Check if the character is a letter and returns true or false.
+ * @param ch Character
+ * @return Boolean value to indicate if the character is a letter as true or false.
+*/
 bool isLetter(char ch) {
     return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
 }
 
+/**
+ * @brief Check if the character is a number and returns true or false.
+ * @param ch Character
+ * @return Boolean value to indicate if the character is a number as true or false.
+*/
 bool isDigit(char ch) {
     return ch >= '0' && ch <= '9';
 }
 
+/**
+ * @brief Check if the character is whitespace and returns true or false.
+ * @param ch Character
+ * @return Boolean value to indicate if the character is whitespace as true or false.
+*/
 bool isWhitespace(char ch) {
     return ch == ' ' || ch == '\n' || ch == '\t';
 }
@@ -31,6 +46,7 @@ int main() {
     // Need to convert the string to c-string
     const char* quote = input.c_str();
 
+    // iterivaley check if the character is a letter, number, whitespace, or special character
     for (int i = 0; i < strlen(quote); ++i) {
         char ch = quote[i];
         if (isLetter(ch)) {
@@ -39,11 +55,12 @@ int main() {
             ++digits;
         } else if (isWhitespace(ch)) {
             ++whitespaces;
-        } else {
+        } else { // None of those, therefore, it is a special character.
             ++specialChars;
         }
     }
 
+    //Output values.
     cout << "Number of letters: " << letters << endl;
     cout << "Number of digits: " << digits << endl;
     cout << "Number of whitespaces: " << whitespaces << endl;
