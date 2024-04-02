@@ -7,6 +7,14 @@
 #include "SmartProduct.h"
 using namespace std;
 
+/**
+ * @brief Add a declaration for a constructor that takes in an integer to represent the product’s ID
+    number, a string to store the product’s name, an integer to store the number of units of
+    product the user wishes to order, and a double to store the price of a single unit of the product
+
+    The constructor should also calculate the total price of the product and store that value
+    in the appropriate variable
+*/
 SmartProduct::SmartProduct(int id, string name, int units, double price)
     : productID(id), productName(name), unitsOrdered(units), pricePerUnit(price) {
     totalPrice = unitsOrdered * pricePerUnit;
