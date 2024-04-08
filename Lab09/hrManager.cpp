@@ -61,6 +61,7 @@ int main() {
     int numOfEmployees;
     cout << "How many employees would you like to add: ";
     cin >> numOfEmployees;
+    cin.ignore();
 
     // Create an array of Employee pointers, with a size specified by the user
     Employee** employees = new Employee*[numOfEmployees];
@@ -73,28 +74,30 @@ int main() {
 
         // Prompt the user if they wish to add a Supervisor or a Worker.
         cout << "Would you like to add a worker or a supervisor: ";
-        cin >> type;
+        getline(cin, type);
 
         if (type == "worker") {
             cout << "Please enter the name of the worker: ";
-            cin >> name;
+            getline(cin, name);
             cout << "Please enter the id of the worker: ";
             cin >> id;
             cout << "Please enter the pay rate of the worker: ";
             cin >> payRate;
             cout << "Please enter the shift of the worker (1 for day, 2 for night): ";
             cin >> shiftOrLevel;
+            cin.ignore();
 
             employees[i] = new Worker(name, id, shiftOrLevel, payRate);
         } else if (type == "supervisor") {
             cout << "Please enter the name of the supervisor: ";
-            cin >> name;
+            getline(cin, name);
             cout << "Please enter the id of the supervisor: ";
             cin >> id;
             cout << "Please enter the pay rate of the supervisor: ";
             cin >> payRate;
             cout << "Please enter the level of the supervisor: ";
             cin >> shiftOrLevel;
+            cin.ignore();
 
             employees[i] = new Supervisor(name, id, shiftOrLevel, payRate);
         } else {
