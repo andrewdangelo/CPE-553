@@ -1,9 +1,10 @@
 /* Author: Andrew D'Angelo
    Date: 04/15/2024
-   Description: This program accepts a text file full of words and counts the number of words in chunk of text. To do so the text file is broken into words and stored in a frequency map.
+   Description: This program accepts a text file full of words and counts the number of words in chunk of text. To do so the text file is broken into words and stored in a frequency map. More so, this program is an augmentation 
+   of V1 because it eliminates the use of stop words by applying them to an unordered map and cross referencing the two maps for removal.
 */
 
-#include "FreqCountV1.h"
+#include "FreqCountV2.h"
 #include <iostream>
 #include <fstream>
 #include <cctype>
@@ -37,7 +38,7 @@ FileNotFound exception, being sure to pass in the name of the file
     • If the word exists in the map, increment its frequency by 1
     • If the word does not exist in the map, set its frequency to 1
 */
-void readTextFile(map<string, int>& frequencyMap) {
+void readTextFile(map<string, int>& frequencyMap, unordered_map<string, int>& stopWords) {
     string fileName;
     cout << "Please enter the name of the file to process: ";
     cin >> fileName;
@@ -50,8 +51,12 @@ void readTextFile(map<string, int>& frequencyMap) {
     string word;
     while (inFile >> word) {
         toLower(word);
-        frequencyMap[word]++;
+        if (stopWords.find(word) == stopWords.end()) {
+            frequencyMap[word]++;
+        }
     }
+
+    inFile.close();
 }
 
 /*
@@ -68,6 +73,31 @@ void outputFreq(const map<string, int>& frequencyMap) {
 }
 
 /*
+Define the readStopWordsFile() function such that:
+• It prompts the user for the name of the file, and if the file does not exist throw a
+FileNotFound exception, being sure to pass in the name of the file
+• Otherwise, read the file one line at a time and for each line:
+• Emplace the line in the unordered_map with an associated int of 1
+*/
+void readStopWordsFile(unordered_map<string, int>& stopWords) {
+    string fileName;
+    cout << "Please enter the name of the stopwords file: ";
+    cin >> fileName;
+
+    ifstream file(fileName);
+    if (!file) {
+        throw FileNotFound(fileName);
+    }
+
+    string line;
+    while (getline(file, line)) {
+        toLower(line);
+        stopWords.emplace(line, 1);
+    }
+    file.close();
+}
+
+/*
 Define the main() function such that it:
     • Instantiates a map of string,int pairs
     • In a try block, attempts to read the text file, using the appropriate function, and
@@ -78,8 +108,11 @@ Define the main() function such that it:
 */
 int main() {
     map<string, int> frequencyMap;
+    unordered_map<string, int> stopWords;
+
     try {
-        readTextFile(frequencyMap);
+        readStopWordsFile(stopWords);
+        readTextFile(frequencyMap, stopWords);
         outputFreq(frequencyMap);
     } catch (const FileNotFound& e) {
         cout << e.what() << endl;

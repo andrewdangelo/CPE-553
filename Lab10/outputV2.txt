@@ -1,0 +1,90 @@
+Please enter the name of the stopwords file: gowords.txt
+gowords.txt does not exist!
+
+
+
+
+Please enter the name of the stopwords file: stopwords.txt
+Please enter the name of the file to process: backgammon.txt
+5,000: 1
+according: 1
+accumulate: 1
+allows: 1
+anticipate: 1
+archaeological: 1
+back: 1
+backgammon: 5
+bear: 1
+beating: 1
+better: 2
+board: 3
+can: 1
+capable: 1
+checkers: 2
+chess: 1
+choose: 1
+classes: 1
+combination: 1
+computer: 1
+counter-moves: 1
+cube: 1
+determine: 1
+developed: 1
+dice: 3
+discoveries: 1
+doubling: 1
+family: 1
+fifteen: 2
+first: 1
+game: 4
+games: 3
+great: 1
+history: 1
+human: 1
+interest: 1
+involves: 1
+known: 1
+like: 1
+luck: 1
+many: 1
+may: 1
+member: 1
+mesopotamia: 1
+move: 2
+moving: 1
+must: 1
+nearly: 1
+numerous: 1
+objective: 1
+oldest: 2
+one: 2
+opponent: 1
+optional: 1
+options: 1
+outcome: 1
+owing: 1
+pieces: 1
+player: 2
+players: 3
+possible: 1
+raise: 1
+record: 1
+research: 1
+roll: 2
+scientists: 1
+series: 1
+single: 1
+software: 1
+stakes: 1
+strategy: 1
+studied: 1
+tables: 1
+traced: 1
+triangles: 1
+twenty-four: 1
+two: 1
+two-player: 1
+use: 1
+will: 1
+world-class: 1
+years: 1

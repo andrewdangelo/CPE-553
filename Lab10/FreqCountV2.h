@@ -1,18 +1,30 @@
 /* Author: Andrew D'Angelo
    Date: 04/15/2024
-   Description: This program accepts a text file full of words and counts the number of words in chunk of text. To do so the text file is broken into words and stored in a frequency map.
+   Description: This program accepts a text file full of words and counts the number of words in chunk of text. To do so the text file is broken into words and stored in a frequency map. More so, this program is an augmentation 
+   of V1 because it eliminates the use of stop words by applying them to an unordered map and cross referencing the two maps for removal.
 */
 
-#ifndef FREQCOUNTV1_H
-#define FREQCOUNTV1_H
+#ifndef FREQCOUNTV2_H
+#define FREQCOUNTV2_H
 
 #include <map>
+#include<unordered_map>
 #include <string>
 #include<iostream>
 
 using namespace std;
+
+/*
+Declare a function readStopWordsFile() that takes in a reference to an
+unordered_map of string,int pairs, representing all of the possible stopwords and returns
+nothing
+*/
+void readStopWordsFile(unordered_map<string, int>& stopWords);
+
+
 // Declare a function readTextFile() that takes in a reference to a map of string,int pairs and returns nothing.
-void readTextFile(map<string, int>& frequencyMap);
+// Update the function readTextFile() so that it also takes in a reference to an unordered_map of string,int pairs
+void readTextFile(map<string, int>& frequencyMap, unordered_map<string, int>& stopWords);
 
 //Declare a function outputFreq() that takes in a reference to a map of string,int pairs and returns nothing.
 void outputFreq(const map<string, int>& frequencyMap);
