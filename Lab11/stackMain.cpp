@@ -1,3 +1,8 @@
+/* Author: Andrew D'Angelo
+   Date: 04/22/2024
+   Description: This program defines a stack built on a Linked list foundation. Stacks are LIFO and have push, pop, peek and clear operations.
+*/
+
 #include "Stack.h"
 #include <fstream>
 #include <sstream>

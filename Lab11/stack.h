@@ -1,3 +1,8 @@
+/* Author: Andrew D'Angelo
+   Date: 04/22/2024
+   Description: This program declares a stack built on a Linked list foundation. Stacks are LIFO and have push, pop, peek and clear operations.
+*/
+
 #ifndef STACK_H
 #define STACK_H
 
@@ -97,6 +102,7 @@ public:
     }
 
     T peek() const {
+        // Empty?
         if (!head) throw EmptyStackException("peek");
         return head->getData();
     }

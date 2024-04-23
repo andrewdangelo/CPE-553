@@ -1,3 +1,8 @@
+/* Author: Andrew D'Angelo
+   Date: 04/22/2024
+   Description: This program declared a queue built on a Linked list foundation. Queues are FIFO and have enqueue, dequeue, peek and clear operations.
+*/
+
 #ifndef QUEUE_H
 #define QUEUE_H
 
@@ -98,25 +103,45 @@ public:
         Node<T>* temp = head;
         T data = temp->getData();
         head = head->getNext();
-        if (!head) tail = nullptr;  // If the queue becomes empty
+        if (!head) tail = nullptr;
         delete temp;
         return data;
     }
 
+    /*
+    A function named peek() that takes in no parameters, returns the data of type T at
+    the front of the Queue, and should:
+        • Check if the Queue is empty, and if so raise an EmptyQueueException
+        passing in the function name as a string
+        • Otherwise, return the data in the Node at the front of the LinkedList
+    */
     T peek() const {
+        //Empty?
         if (!head) throw EmptyQueueException("peek");
         return head->getData();
     }
 
+    /*
+    A function named clear() that takes in no parameters, returns nothing, and removes
+    all Nodes from the LinkedList
+        • Don’t forget to deallocate each Node!
+        • Also, don’t forget to update both the head and tail Nodes!
+    */
     void clear() {
         while (head) {
             Node<T>* temp = head;
             head = head->getNext();
             delete temp;
         }
-        tail = nullptr;  // Reset tail
+        tail = nullptr;
     }
 
+/*
+A function named clear() that takes in no parameters, returns nothing, and removes
+all Nodes from the LinkedList
+• Don’t forget to deallocate each Node!
+• Also, don’t forget to update both the head and tail Nodes!
+*/
     void printQueue() const {
         if (!head) {
             cout << endl;
